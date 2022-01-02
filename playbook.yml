@@ -9,8 +9,10 @@
 
   
 
-  - name: insatll httpd
-    dnf:
-      name: tmux
+  - name: insatll httpd and tmux
+    package:
+      name:
+        - "{{ httpd }}"
+        - "{{ tmux }}" 
       state: latest
     when: ansible_distribution == "CentOS"  
